@@ -140,31 +140,31 @@ Una regla a tomar en cuenta que si un Switch y router estan conectados mutuament
 Para capturar paquetes es necesario realizar una configuracion en el router, indicarle las configuraciones necesarias sobre las cuales trabajara, estas son las siguientes primero entramos en el modo configuracion 'configure t' luego 'router rip', 'version 2' luego indicamos sobre que mascaras de subred trabajamos en nuestro caso las siguientes, '192.168.12.1', '192.168.12.65', '192.168.12.129'. luego salimos con exit, de ultimo no olvidar guardr cambios con 'write'.
 
 
-![captured ports](Images/configuredinterfaces.png?raw=true "Title")
+![captured ports](Images/captureconfigrouter.PNG?raw=true "Title")
 
 
 El siguiente paso es hacer ping de forma permanente mientras capturamos en nuestro caso lo hacemos desde tiny linux. hacia el VPC3, despues en GNS3 hacemos click izquierdo la interfaz que queremos capturar y seleccionamos capturar, se nos abrira un dialogo donde se nos indicara el puerto a capturar, pulsamos ok y se abrira Wireshark mostrandonos los paquetes request que envia nuestra maquina tiny linux y la respuesta de la VPC3, con doble clic podremos expandir la informacion de dichos paquetes y ver la informacion que tienen.
 
 
-![dialog capture](Images/dialogcapture.png?raw=true "Title")
+![dialog capture](Images/dialogcapture.PNG?raw=true "Title")
 
 
-![click capture ports](Images/capture.png?raw=true "Title")
+![click capture ports](Images/capture.PNG?raw=true "Title")
 
 
 Podemos observar como envia los paquetes nuestra maquina y en cuanto tiempo recive respuesta, en Wireshark ver los paquetes anteriormente mensionados
 
 
-![colision broadcast](Images/capturing.png?raw=true "Title")
+![colision broadcast](Images/capturing.PNG?raw=true "Title")
 
 
 Podemos ver el contenido de los paquetes Request y reply.
 
 
-![request packet](Images/checkpacket1.png?raw=true "Title")
+![request packet](Images/checkpacket1.PNG?raw=true "Title")
 
 
-![reply packet](Images/checkpacket2.png?raw=true "Title")
+![reply packet](Images/checkpacket2.PNG?raw=true "Title")
 
 
 
