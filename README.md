@@ -120,7 +120,9 @@ Para poder verificar la conexion de VPC con otra vpc en la consola de nuestra VP
 
 Para poder verificar la conecion de nuestra maquina virtual con alguna de nuestras VPC hacemos ping con alguna de ellas en este caso 'ping 192.168.12.5'
 
+
 ![verificate Configuration router](Images/pc6topc1.PNG?raw=true "Title")
+
 
 ## Calculo de Dominios de Colisión y de Broadcast en Topologia de Red
 Para realizar el calculo de dominios de colisión es necesario tomar en cuenta cuantos dominios de colisión y broadcast tiene cada dispositivo utilizado en nuestra topologia de red.
@@ -130,9 +132,39 @@ Para realizar el calculo de dominios de colisión es necesario tomar en cuenta c
 
 Una regla a tomar en cuenta que si un Switch y router estan conectados mutuamente el dominio de broadcast es el mismo tanto para el Switch como para el router, seria incorrecto tomar 2 dominios de broadcast asumiendo 1 para el Switch y 1 para la interfaz conectada del router.
 
-![verificate Configuration router](Images/pc6topc1.PNG?raw=true "Title")
+
+![colision broadcast](Images/colisionbroadcast.png?raw=true "Title")
 
 
+## Captura de paquetes
+Para capturar paquetes es necesario realizar una configuracion en el router, indicarle las configuraciones necesarias sobre las cuales trabajara, estas son las siguientes primero entramos en el modo configuracion 'configure t' luego 'router rip', 'version 2' luego indicamos sobre que mascaras de subred trabajamos en nuestro caso las siguientes, '192.168.12.1', '192.168.12.65', '192.168.12.129'. luego salimos con exit, de ultimo no olvidar guardr cambios con 'write'.
+
+
+![captured ports](Images/configuredinterfaces.png?raw=true "Title")
+
+
+El siguiente paso es hacer ping de forma permanente mientras capturamos en nuestro caso lo hacemos desde tiny linux. hacia el VPC3, despues en GNS3 hacemos click izquierdo la interfaz que queremos capturar y seleccionamos capturar, se nos abrira un dialogo donde se nos indicara el puerto a capturar, pulsamos ok y se abrira Wireshark mostrandonos los paquetes request que envia nuestra maquina tiny linux y la respuesta de la VPC3, con doble clic podremos expandir la informacion de dichos paquetes y ver la informacion que tienen.
+
+
+![dialog capture](Images/dialogcapture.png?raw=true "Title")
+
+
+![click capture ports](Images/capture.png?raw=true "Title")
+
+
+Podemos observar como envia los paquetes nuestra maquina y en cuanto tiempo recive respuesta, en Wireshark ver los paquetes anteriormente mensionados
+
+
+![colision broadcast](Images/capturing.png?raw=true "Title")
+
+
+Podemos ver el contenido de los paquetes Request y reply.
+
+
+![request packet](Images/checkpacket1.png?raw=true "Title")
+
+
+![reply packet](Images/checkpacket2.png?raw=true "Title")
 
 
 
