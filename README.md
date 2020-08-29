@@ -122,6 +122,15 @@ Para poder verificar la conecion de nuestra maquina virtual con alguna de nuestr
 
 ![verificate Configuration router](Images/pc6topc1.PNG?raw=true "Title")
 
+## Calculo de Dominios de Colisión y de Broadcast en Topologia de Red
+Para realizar el calculo de dominios de colisión es necesario tomar en cuenta cuantos dominios de colisión y broadcast tiene cada dispositivo utilizado en nuestra topologia de red.
+
+1. router = 1 Dominio de Colisión, 1 Dominio de Broadcast (por cada interfaz conectada tanto para colisión como broadcast)
+2. Switch = 1 Dominio de Colisión, 1 Dominio de Broadcast (1 dominio de colisión por cada interfaz conectada, pero solo 1 dominio de broadcast por todo el dispositivo)
+
+Una regla a tomar en cuenta que si un Switch y router estan conectados mutuamente el dominio de broadcast es el mismo tanto para el Switch como para el router, seria incorrecto tomar 2 dominios de broadcast asumiendo 1 para el Switch y 1 para la interfaz conectada del router.
+
+![verificate Configuration router](Images/pc6topc1.PNG?raw=true "Title")
 
 
 
